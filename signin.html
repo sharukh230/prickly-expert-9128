@@ -66,17 +66,21 @@
 
 </body>
 <script>
-    let form = document.querySelector("form");
-    let signArr = []
-
-    form.addEventListener("submit", function () {
+    let signArr=[]
+    document.querySelector("form").addEventListener("submit", function () {
+        event.preventDefault();
+        let email=document.querySelector("#email").value;
+        let password=document.querySelector("#password").value;
         let obj = {
-            email: form.email.value,
-            password: form.password.value
+            email:email,
+            password:password,
         }
-        signArr.push(obj);
-        localStorage.setItem("signin",signArr)
+        
+       signArr.push(obj)
+       console.log(signArr)
     })
 </script>
-
+{
+    "password": {}
+}
 </html>

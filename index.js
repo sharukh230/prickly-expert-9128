@@ -121,3 +121,7 @@ productList.forEach(function (elem) {
 
 })
 
+let signin=document.getElementById("signinbtn");
+signin.addEventListener("click",function(){
+    window.location.href="./signin.html"
+})
