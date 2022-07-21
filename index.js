@@ -106,6 +106,7 @@ productList.forEach(function (elem) {
     name.innerText = elem.name;
     let desc = document.createElement("p");
     desc.innerText = elem.desc;
+    desc.style.fontSize="15px"
     let price = document.createElement("p");
     price.innerText = elem.price;
 
