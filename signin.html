@@ -66,7 +66,32 @@
 
 </body>
 <script>
-    
+    let form = document.querySelector("form")
+    let signupLS = JSON.parse(localStorage.getItem("signup")) || []
+    form.addEventListener("submit", function () {
+        event.preventDefault();
+        if (signupLS === 0) {
+            alert("Complete the SignUp Process")
+            return
+        }
+        let obj = {
+            email: form.email.value,
+            password: form.password.value,
+        }
+        let isSignedIn = false;
+        signupLS.forEach(function (ele) {
+            if (ele.email === obj.email && ele.password === obj.password) {
+                isSignedIn = true;
+                localStorage.setItem("signin", JSON.stringify(ele));
+                alert("signIn SuccessFull");
+                window.location.href = "index.html"
+            }
+        })
+        if (isSignedIn === false) {
+            alert("User Doesnot Exist")
+        }
+
+    })
 </script>
 
 </html>
