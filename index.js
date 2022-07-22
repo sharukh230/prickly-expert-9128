@@ -122,11 +122,11 @@ productList.forEach(function (elem) {
 
 })
 
-document.getElementById("signinbtn").addEventListener("click", function () {
+// document.getElementById("signinbtn").addEventListener("click", function () {
 
-    document.getElementById("signInpop").style.display = "block";
-})
-document.getElementById("signupbtn").addEventListener("click", function () {
+//     document.getElementById("signInpop").style.display = "block";
+// })
+// document.getElementById("signupbtn").addEventListener("click", function () {
 
-    document.getElementById("signUpPop").style.display = "block";
-})
+//     document.getElementById("signUpPop").style.display = "block";
+// })

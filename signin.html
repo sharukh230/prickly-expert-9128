@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form>
+        <p>Eamil</p>
+        <input id="email" type="email">
+        <p>Password</p>
+        <input id="password" type="password">
+        <p>This site is protected by reCAPTCHA and the <a href="">Google Privacy Policy</a> and <a href="">Terms of
+                Service </a>apply. </p>
+        <input id="signin" type="submit" value="SIGN IN">
+    </form>
+
+
+</body>
+
+
+<script>
+    let form = document.querySelector("form")
+    let signupLS = JSON.parse(localStorage.getItem("signup")) || []
+    form.addEventListener("submit", function () {
+        event.preventDefault();
+        let obj = {
+            email: form.email.value,
+            password: form.password.value,
+        }
+
+        signupLS.forEach(function (ele) {
+            if (ele.email === obj.email && ele.password === obj.password) {
+                localStorage.setItem("signin", JSON.stringify(ele));
+                alert("signIn SuccessFull");
+                window.location.href = "index.html"
+            }
+            
+        })
+
+
+    })
+</script>
+
+</html>
