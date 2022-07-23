@@ -37,6 +37,7 @@
 
 #slider>div {
     width: 50%;
+    text-align: center;
 
 }
 
@@ -68,11 +69,13 @@
 #sliderDiv {
     width: 60%;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 100px;
+    text-align: right;
 }
 
 #slider>div:first-child {
     background-color: antiquewhite;
+    text-align: center;
 }
 
 h2{
@@ -107,7 +110,7 @@ h2{
 
 #blogPost button {
     position: absolute;
-    top: 30%;
+    top: 10%;
     background-color: rgba(100, 100, 100, 0.1);
     border: none;
     font-size: 1.5rem;
@@ -134,7 +137,9 @@ h2{
 
 #tips>div:last-child {
     background-color: antiquewhite;
-
+    padding: 100px;
+    font-size: 20px;
+    text-align: center;
 }
 
 #tips img {
@@ -160,6 +165,8 @@ body>h1,p{
 }
 #guides>div{
     width: 50%;
+    text-align: center;
+    font-size: 20px;
 }
 #guides>div:first-child{
     background-color: antiquewhite;
@@ -227,4 +234,8 @@ h4{
 }
 #rodan{
     margin-left: 150px;
+}
+a{
+    text-decoration: none;
+
 }

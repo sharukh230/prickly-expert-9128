@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart</title>
+    <link rel="stylesheet" href="./cart.css" />
+
+
+</head>
+
+<body>
+    <div id="navbar">
+        <div id="topnavbar">
+            <div> <a href=""> FIND A CONSULTANT</a></div>
+            <div>
+                <a href="index.html"><img
+                        src="https://www.rodanandfields.com/en-us/medias/rf-logo.svg?context=bWFzdGVyfGltYWdlc3w3MzczfGltYWdlL3N2Zyt4bWx8aW1hZ2VzL2g2MC9oYWIvODgyMjE0NzE4NjcxOC5zdmd8YjNmMmU2YTg5MTM0NTMzM2Y2ODg2ZmRkZTJhNmY2OWZhYmYyYjk5NWQxODkxODFiYjVkY2MxY2NjOWRlMzA5OA"
+                        alt=""></a>
+            </div>
+            <div id="rightNav">
+
+
+                <div id="nav">
+
+                    <a href="signup.html">Sign Up</a>
+                    <a href="signin.html">Sign In</a>
+                </div>
+
+                <a href=""> <img id="cart"
+                        src="https://flyclipart.com/thumb2/shopping-bag-png-transparent-icon-301335.png" alt=""></a>
+                <a href=""> <img id="usaFlag"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Flag_of_the_United_States_%28Francis_Hopkinson%29.svg/220px-Flag_of_the_United_States_%28Francis_Hopkinson%29.svg.png"
+                        alt=""> English</a>
+            </div>
+        </div>
+        <hr>
+        <div id="bottomnav">
+            <h3><a href="">SHOP</a></h3>
+            <h3><a href="index.html">BEST SELLERS</a></h3>
+            <h3><a href="">FEATURED</a></h3>
+            <h3><a href="">OUR STORY</a></h3>
+            <h3><a href="">PERKS PROGRAM</a></h3>
+            <h3><a href="">BECOME A CONSULTANT</a></h3>
+            <h3><a href="blog.html">BLOG</a></h3>
+        </div>
+    </div>
+    <h1>REVIEW YOUR BAG</h1>
+    <div id="cartPage">
+        <div id="cartCheck">
+            <div id="joinPC">
+                <img src="https://www.rodanandfields.com/en-us/_ui/images/pcperks_upsell/pc-perks-logo.png" alt="">
+                <h3>Subscribe & Save $11.00!</h3>
+                <p>Join PC Perks for $19.95 to Save 10% + Get Free Shipping on orders $80+ <a href="">View More</a></p>
+                <button>ADD MEMBERSHIP - $19.95</button>
+            </div>
+            <div id="container">
+            </div>
+        </div>
+        <div id="priceCheck">
+            <p>ORDER SUMMARY</p>
+            <div>
+                <p>SUB TOTAL</p>
+                <p>$ <span id="total-price">0</span></p>
+            </div>
+            <hr> 
+            <br>
+            <button> <a href="index.html"> CONTINUE SHOPPING</a></button>
+            <br>
+            <button> <a id="black" href="checkout.html">SECURE CHECKOUT</a> </button>
+            <div id="payment">
+                <p>We accept</p>
+                <img src="https://www.rodanandfields.com/en-us/_ui/images/card-icons/cc-paypal.png" alt="">
+                <img src="https://www.rodanandfields.com/en-us/_ui/images/card-icons/cc-visa.png" alt="">
+                <img src="https://www.rodanandfields.com/en-us/_ui/images/card-icons/cc-mastercard.png" alt="">
+                <img src="https://www.rodanandfields.com/en-us/_ui/images/card-icons/cc-discover.png" alt="">
+                <img src="https://www.rodanandfields.com/en-us/_ui/images/card-icons/cc-amex.png" alt="">
+                <img src="https://www.rodanandfields.com/en-us/_ui/images/card-icons/klarna-logo.png" alt="">
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+<script>
+    let cartLS = JSON.parse(localStorage.getItem("cart-page")) || [];
+    let totalPrice = document.getElementById("total-price");
+    function Display(productList) {
+        container.innerHTML = null;
+        let total = 0;
+        productList.forEach(function (elem, index) {
+            let div = document.createElement("div");
+            total += Number(elem.price)
+            let image = document.createElement("img");
+            image.src = elem.image_url
+            let name = document.createElement("h4");
+            name.innerText = elem.name;
+            let price = document.createElement("p");
+            price.innerText = elem.price;
+
+
+
+            let deleteBtn = document.createElement("button");
+            deleteBtn.innerText = "DELETE"
+            deleteBtn.addEventListener("click", function () {
+                deleteCart(index)
+            })
+
+
+            document.querySelector("#container").append(div)
+            div.append(image, name, price, deleteBtn);
+
+        })
+        totalPrice.innerText = total;
+    }
+    Display(cartLS)
+
+    function deleteCart(index) {
+        let deletedCart = cartLS.filter(function (el, i) {
+            return i != index;
+        })
+        Display(deletedCart);
+        localStorage.setItem("cart-page", JSON.stringify(deletedCart))
+    }
+
+
+
+    let signinLS = JSON.parse(localStorage.getItem("signin"));
+    let navbar = document.getElementById("nav");
+    if (signinLS != null) {
+        navbar.innerHTML = null;
+        let username = document.createElement("h3");
+        username.innerText = "Welcome" + " " + signinLS.name;
+        navbar.append(username)
+    }
+
+
+</script>
+
+</html>
