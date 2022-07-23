@@ -106,7 +106,7 @@ productList.forEach(function (elem) {
     name.innerText = elem.name;
     let desc = document.createElement("p");
     desc.innerText = elem.desc;
-    desc.style.fontSize="15px"
+    desc.style.fontSize = "15px"
     let price = document.createElement("p");
     price.innerText = elem.price;
 
@@ -122,7 +122,11 @@ productList.forEach(function (elem) {
 
 })
 
-let signin=document.getElementById("signinbtn");
-signin.addEventListener("click",function(){
-    window.location.href="./signin.html"
-})
+// document.getElementById("signinbtn").addEventListener("click", function () {
+
+//     document.getElementById("signInpop").style.display = "block";
+// })
+// document.getElementById("signupbtn").addEventListener("click", function () {
+
+//     document.getElementById("signUpPop").style.display = "block";
+// })

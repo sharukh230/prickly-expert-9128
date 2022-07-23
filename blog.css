@@ -1,3 +1,6 @@
+*{
+    font-family: 'Ibarra Real Nova', serif;
+}
 #blogNavbar{
     position: sticky;
     top: 0px;
@@ -13,8 +16,9 @@
     margin: auto;
     display: flex;
     justify-content: space-around;
-  
+    font-size: 10px;
 }
+
 
 #heading {
     text-align: center;
@@ -221,6 +225,6 @@ h4{
     display: flex;
     justify-content: space-between;
 }
-h3{
+#rodan{
     margin-left: 150px;
 }

@@ -1,6 +1,6 @@
 
 *{
-    font-family: Arial,Sans-Serif;
+    font-family: 'Ibarra Real Nova', serif;
     line-height: 1.25;
     letter-spacing: .5px;
 }
@@ -16,9 +16,15 @@
     padding-top: 20px;
     padding-bottom: 20px;
     font-family: ProximaNovaMedium,Arial,Sans-Serif;
+    font-size: 13px;
 }
 #topnavbar>div:first-child{
     margin-left: 20px;
+}#cart{
+    width: 25px;
+}
+#usaFlag{
+    width: 23px;
 }
 
 #rightNav {
@@ -31,11 +37,12 @@
 #bottomnav {
     display: flex;
     justify-content: center;
+    box-shadow: rgba(100, 100, 111, 0.1) 0px 10px 29px 0px;
 }
 
 #bottomnav>h3 {
     margin-right: 20px;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: lighter;
 }
 
@@ -130,4 +137,53 @@ a {
         grid-template-columns: repeat(1, 1fr);
     }
 
+}
+
+
+
+#signInpop,#signUpPop{
+    font-family: Arial, Sans-Serif;
+    line-height: 1.25;
+    letter-spacing: .5px;
+    font-size: .9rem;
+    color: gray;
+    background-color: white;
+    display: none;
+    position: fixed;
+    top: 90px;
+    right: 150px;
+    z-index: 10;
+    padding: 0px 0px 30px 40px;
+    
+
+
+}
+#signinbtn,#signupbtn{
+    border: none;
+    width: 70px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+form {
+    width: 350px;
+}
+
+
+#email,#password,#name1,#password1,#email1 {
+    width: 80%;
+    padding: 10px;
+    margin-top: -10px;
+    border-color: gray;
+    border-radius: 5px;
+
+}
+
+#signin,#signup {
+    width: 85%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
 }

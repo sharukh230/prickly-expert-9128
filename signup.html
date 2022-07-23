@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="signUpPop">
+        <p>Name</p>
+        <input id="name" type="text">
+        <p>Email</p>
+        <input id="email" type="email">
+        <p>Password</p>
+        <input id="password" type="password" >
+        <br>
+        <br>
+        <input id="signup" type="submit" value="SIGN UP">
+    </form>
+    
+</body>
+<script>
+    let form = document.querySelector("#signUpPop")
+let signupLS = JSON.parse(localStorage.getItem("signup")) || []
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let obj = {
+        name: form.name.value,
+        email: form.email.value,
+        password: form.password.value,
+    }
+    if (obj.name === "" || obj.email === "" || obj.password === "") {
+        alert("Fields are Empty")
+        return;
+    }
+        signupLS.push(obj)
+        console.log(obj)
+        localStorage.setItem("signup", JSON.stringify(signupLS))
+        alert("SignUp SuccessFull, Please SignIn And continue")
+        window.location.href="signin.html"
+        
+})
+</script>
+</html>
