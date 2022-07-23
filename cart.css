@@ -44,3 +44,73 @@
     font-size: 13px;
     font-weight: lighter;
 }
+#cartPage{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    
+}
+#container>div{
+    width: 20%;
+    display: flex;
+    
+}
+#container>div img, #container>div p, #container>div h4{
+    margin-right: 40px;
+}
+#container img{
+    width: 100px;
+}
+#container>div button{
+   margin: 15px;
+}
+
+#cartPage>div{
+width: 40%;
+}
+#joinPC{
+    text-align: center;
+background-color: rgb(239, 235, 235);
+padding: 20px ;
+}
+
+h1{
+    text-align: center;
+}
+#priceCheck>div{
+    display: flex;
+    justify-content: space-around;
+}
+#priceCheck>div>p{
+    font-weight: bold;
+}
+#priceCheck>div>p:last-child{
+    font-size: 20px;
+}
+#priceCheck>p{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+#priceCheck>button{
+    display: block;
+    width: 85%;
+    padding: 15px;
+    margin: auto;
+}
+#priceCheck>button:nth-last-child(2){
+    background-color: black;
+    color: white;
+}
+#payment{
+    margin: auto;
+    display: flex;
+    width: 70%;
+    justify-content: space-around;
+}#payment>img{
+    width: 30px;
+    height: 20px;
+    margin-top: 20px;
+}
